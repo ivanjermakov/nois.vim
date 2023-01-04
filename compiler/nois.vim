@@ -1,1 +1,1 @@
-CompilerSet makeprg=nois run\ $*
+CompilerSet makeprg=nois\ run\ $*
