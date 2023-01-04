@@ -14,7 +14,7 @@ syn match   noisFuncCall              "\w\(\w\)*("he=e-1,me=e-1
 syn match   noisOperator              display "\%(+\|-\|/\|*\|=\|\^\|&\||\|!\|>\|<\|%\)=\?"
 syn match   noisArrowCharacter        display "->"
 
-syn match   noisSpecial               "\\\\\\\n\|\\r\|\\t\|\\u\x\{1,4\}" contained containedin=noisStringD,noisStringS,noisStringB display
+syn match   noisSpecial               "\\\\\\\n\|\\r\|\\t\|\\u\x\{4\}" contained containedin=noisStringD,noisStringS,noisStringB display
 syn region  noisStringD               start=+"+ skip=+\\\\\|\\"+ end=+"\|$+  contains=noisSpecial extend
 syn region  noisStringS               start=+'+ skip=+\\\\\|\\'+ end=+'\|$+  contains=noisSpecial extend
 
