@@ -51,7 +51,7 @@ call dein#add('ivanjermakov/nois.vim')
 NeoBundle 'ivanjermakov/nois.vim'
 ```
 
-[nois]: https://github.com/ivanjermakov/nois
+[nois]: https://github.com/nois-lang/nois
 [vim8]: http://vimhelp.appspot.com/repeat.txt.html#packages
 [vundle]: https://github.com/gmarik/vundle
 [pathogen]: https://github.com/tpope/vim-pathogen
