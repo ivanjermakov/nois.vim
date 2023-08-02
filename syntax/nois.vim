@@ -1,13 +1,8 @@
 " Vim syntax file
 " Language:     Nois
 
-syn keyword noisConditional           match
+syn keyword noisKeyword               use type trait impl let fn if else return while for in match
 syn match   noisIdentifier            "\w\+"
-syn keyword noisKeyword               return
-
-syn keyword noisType                  I F C B Fn
-
-syn keyword noisBoolean               True False
 
 syn match   noisFuncCall              "\w\(\w\)*("he=e-1,me=e-1
 
@@ -15,8 +10,9 @@ syn match   noisOperator              display "\%(+\|-\|/\|*\|=\|\^\|&\||\|!\|>\
 syn match   noisArrowCharacter        display "->"
 
 syn match   noisSpecial               "\\\\\\\n\|\\r\|\\t\|\\u\x\{4\}" contained containedin=noisStringD,noisStringS,noisStringB display
-syn region  noisStringD               start=+"+ skip=+\\\\\|\\"+ end=+"\|$+  contains=noisSpecial extend
-syn region  noisStringS               start=+'+ skip=+\\\\\|\\'+ end=+'\|$+  contains=noisSpecial extend
+syn region  noisString                start=+"+ skip=+\\\\\|\\"+ end=+"\|$+  contains=noisSpecial extend
+syn match   noisCharacter             /b'\([^\\]\|\\\(.\|x\x\{2}\)\)'/ 
+syn match   noisCharacter             /'\([^\\]\|\\\(.\|x\x\{2}\|u{\%(\x_*\)\{1,6}}\)\)'/
 
 syn match   noisDecNumber             display "\<[0-9][0-9_]*\%([iu]\%(size\|8\|16\|32\|64\|128\)\)\="
 syn match   noisFloat                 display "\<[0-9][0-9_]*\.\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\|\.\)\@!"
@@ -33,8 +29,8 @@ syn region  noisFoldBraces            start="{" end="}" transparent fold
 hi def link noisDecNumber             noisNumber
 
 hi def link noisSpecial               Special
-hi def link noisStringD               String
-hi def link noisStringS               String
+hi def link noisString                String
+hi def link noisCharacter             Character
 hi def link noisNumber                Number
 hi def link noisBoolean               Boolean
 hi def link noisFloat                 Float
