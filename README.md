@@ -3,6 +3,9 @@ Vim plugin that provides [Nois][nois] syntax highlighting.
 
 ## Installation
 
+<details>
+<summary>Expand</summary>
+
 For activating the full functionality, this plugin requires either the plugin
 manager or the `.vimrc` to have the following:
 
@@ -10,10 +13,6 @@ manager or the `.vimrc` to have the following:
 syntax enable
 filetype plugin indent on
 ```
-
-Most plugin managers don't do this automatically, so these statements are
-usually added by users in their `vimrc` _right after_ the plugin manager load
-section.
 
 ### [Vim8 packages][vim8]
 
@@ -50,6 +49,7 @@ call dein#add('ivanjermakov/nois.vim')
 ```vim
 NeoBundle 'ivanjermakov/nois.vim'
 ```
+</details>
 
 [nois]: https://github.com/nois-lang/nois
 [vim8]: http://vimhelp.appspot.com/repeat.txt.html#packages

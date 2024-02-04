@@ -7,14 +7,12 @@ syn match   noisIdentifier            "\w\+"
 syn match   noisFuncCall              "\w\(\w\)*("he=e-1,me=e-1
 
 syn match   noisOperator              display "\%(+\|-\|/\|*\|=\|\^\|&\||\|!\|>\|<\|%\)=\?"
-syn match   noisArrowCharacter        display "->"
 
 syn match   noisSpecial               "\\\\\\\n\|\\r\|\\t\|\\u\x\{4\}" contained containedin=noisStringD,noisStringS,noisStringB display
 syn region  noisString                start=+"+ skip=+\\\\\|\\"+ end=+"\|$+  contains=noisSpecial extend
-syn match   noisCharacter             /b'\([^\\]\|\\\(.\|x\x\{2}\)\)'/ 
 syn match   noisCharacter             /'\([^\\]\|\\\(.\|x\x\{2}\|u{\%(\x_*\)\{1,6}}\)\)'/
 
-syn match   noisDecNumber             display "\<[0-9][0-9_]*\%([iu]\%(size\|8\|16\|32\|64\|128\)\)\="
+syn match   noisInt                   display "\<[0-9][0-9_]*\%([iu]\%(size\|8\|16\|32\|64\|128\)\)\="
 syn match   noisFloat                 display "\<[0-9][0-9_]*\.\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\|\.\)\@!"
 syn match   noisFloat                 display "\<[0-9][0-9_]*\%(\.[0-9][0-9_]*\)\%([eE][+-]\=[0-9_]\+\)\=\(f32\|f64\)\="
 syn match   noisFloat                 display "\<[0-9][0-9_]*\%(\.[0-9][0-9_]*\)\=\%([eE][+-]\=[0-9_]\+\)\(f32\|f64\)\="
@@ -26,23 +24,18 @@ syn keyword noisTodo                  contained TODO
 
 syn region  noisFoldBraces            start="{" end="}" transparent fold
 
-hi def link noisDecNumber             noisNumber
-
 hi def link noisSpecial               Special
 hi def link noisString                String
 hi def link noisCharacter             Character
-hi def link noisNumber                Number
+hi def link noisInt                   Number
 hi def link noisBoolean               Boolean
 hi def link noisFloat                 Float
-hi def link noisArrowCharacter        noisOperator
 hi def link noisOperator              Operator
 hi def link noisKeyword               Keyword
 hi def link noisConditional           Conditional
 hi def link noisIdentifier            Identifier
 hi def link noisFuncCall              Function
 hi def link noisCommentLine           Comment
-hi def link noisCommentLineDoc        SpecialComment
-hi def link noisType                  Type
 hi def link noisTodo                  Todo
 
 syn sync minlines=200
