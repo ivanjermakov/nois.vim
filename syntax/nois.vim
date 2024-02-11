@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:     Nois
 
-syn keyword noisKeyword               use type trait impl let fn if else return while for in match
+syn keyword noisKeyword               use type trait impl let fn if else return break while for in match pub
 syn match   noisIdentifier            "\w\+"
 
 syn match   noisFuncCall              "\w\(\w\)*("he=e-1,me=e-1
